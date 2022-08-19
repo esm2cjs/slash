@@ -1,48 +1,52 @@
-# slash
+# @esm2cjs/slash
 
-> Convert Windows backslash paths to slash paths: `foo\\bar` ➔ `foo/bar`
-
-[Forward-slash paths can be used in Windows](http://superuser.com/a/176395/6877) as long as they're not extended-length paths and don't contain any non-ascii characters.
-
-This was created since the `path` methods in Node.js outputs `\\` paths on Windows.
+This is a fork of https://github.com/sindresorhus/slash, but automatically patched to support ESM **and** CommonJS, unlike the original repository.
 
 ## Install
 
+You can use an npm alias to install this package under the original name:
+
 ```
-$ npm install slash
+npm i slash@npm:@esm2cjs/slash
+```
+
+```jsonc
+// package.json
+"dependencies": {
+    "slash": "npm:@esm2cjs/slash"
+}
+```
+
+but `npm` might dedupe this incorrectly when other packages depend on the replaced package. If you can, prefer using the scoped package directly:
+
+```
+npm i @esm2cjs/slash
+```
+
+```jsonc
+// package.json
+"dependencies": {
+    "@esm2cjs/slash": "^ver.si.on"
+}
 ```
 
 ## Usage
 
 ```js
-import path from 'path';
-import slash from 'slash';
+// Using ESM import syntax
+import slash from "@esm2cjs/slash";
 
-const string = path.join('foo', 'bar');
-// Unix    => foo/bar
-// Windows => foo\\bar
-
-slash(string);
-// Unix    => foo/bar
-// Windows => foo/bar
+// Using CommonJS require()
+const slash = require("@esm2cjs/slash").default;
 ```
 
-## API
+> **Note:**
+> Because the original module uses `export default`, you need to append `.default` to the `require()` call.
 
-### slash(path)
+For more details, please see the original [repository](https://github.com/sindresorhus/slash).
 
-Type: `string`
+## Sponsoring
 
-Accepts a Windows backslash path and returns a path with forward slashes.
+To support my efforts in maintaining the ESM/CommonJS hybrid, please sponsor [here](https://github.com/sponsors/AlCalzone).
 
----
-
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-slash?utm_source=npm-slash&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
+To support the original author of the module, please sponsor [here](https://github.com/sindresorhus/slash).
