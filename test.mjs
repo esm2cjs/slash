@@ -1,5 +1,5 @@
 import test from 'ava';
-import slash from './index.js';
+import slash from './esm/index.js';
 
 test('convert backwards-slash paths to forward slash paths', t => {
 	t.is(slash('c:/aaaa\\bbbb'), 'c:/aaaa/bbbb');
