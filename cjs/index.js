@@ -22,8 +22,7 @@ __export(esm_exports, {
 module.exports = __toCommonJS(esm_exports);
 function slash(path) {
   const isExtendedLengthPath = /^\\\\\?\\/.test(path);
-  const hasNonAscii = /[^\u0000-\u0080]+/.test(path);
-  if (isExtendedLengthPath || hasNonAscii) {
+  if (isExtendedLengthPath) {
     return path;
   }
   return path.replace(/\\/g, "/");
