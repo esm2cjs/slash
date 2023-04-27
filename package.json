@@ -1,6 +1,6 @@
 {
 	"name": "@esm2cjs/slash",
-	"version": "5.0.0",
+	"version": "5.0.1",
 	"description": "Convert Windows backslash paths to slash paths. This is a fork of sindresorhus/slash, but with CommonJS support.",
 	"license": "MIT",
 	"repository": "esm2cjs/slash",
