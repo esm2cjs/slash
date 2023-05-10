@@ -21,7 +21,7 @@ __export(esm_exports, {
 });
 module.exports = __toCommonJS(esm_exports);
 function slash(path) {
-  const isExtendedLengthPath = /^\\\\\?\\/.test(path);
+  const isExtendedLengthPath = path.startsWith("\\\\?\\");
   if (isExtendedLengthPath) {
     return path;
   }

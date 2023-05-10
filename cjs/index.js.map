@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../esm/index.js"],
-  "sourcesContent": ["export default function slash(path) {\n\tconst isExtendedLengthPath = /^\\\\\\\\\\?\\\\/.test(path);\n\n\tif (isExtendedLengthPath) {\n\t\treturn path;\n\t}\n\n\treturn path.replace(/\\\\/g, '/');\n}\n"],
-  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAe,SAAR,MAAuB,MAAM;AACnC,QAAM,uBAAuB,YAAY,KAAK,IAAI;AAElD,MAAI,sBAAsB;AACzB,WAAO;AAAA,EACR;AAEA,SAAO,KAAK,QAAQ,OAAO,GAAG;AAC/B;",
+  "sourcesContent": ["export default function slash(path) {\n\tconst isExtendedLengthPath = path.startsWith('\\\\\\\\?\\\\');\n\n\tif (isExtendedLengthPath) {\n\t\treturn path;\n\t}\n\n\treturn path.replace(/\\\\/g, '/');\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAe,SAAR,MAAuB,MAAM;AACnC,QAAM,uBAAuB,KAAK,WAAW,SAAS;AAEtD,MAAI,sBAAsB;AACzB,WAAO;AAAA,EACR;AAEA,SAAO,KAAK,QAAQ,OAAO,GAAG;AAC/B;",
   "names": []
 }
